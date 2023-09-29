@@ -1,0 +1,161 @@
+
+
+  // ACTIVATE VIRTUAL ENVIRONMENT  //
+  
+    - cd [Any directory]
+ 
+    - virtualenv -p /usr/bin/python3.6 lbc
+
+	virtualenv -p /usr/bin/python3.6 .
+ 
+    - cd django-virtual
+
+    - source bin/activate
+
+  // CHECK  PYTHON VERSION PACKAGES  //
+
+    - ls /usr/bin/python*
+
+
+  //  PROJECT   CREATION  //
+
+    - django-admin startproject [projectname]
+
+    - cd [project name ]
+ 
+    - python manage.py startapp [appname]
+
+
+  // MIGRATIONS  //
+ 
+
+    - python manage.py makemigrations
+
+    - python manage.py migrate
+
+    - python manage.py runserver
+
+
+  // PACKAGE INSTALLATION  //
+
+
+    -  pip install [package name]
+
+    -  pip freeze   ---> view all installed packages
+
+  //  CREATE SUPER USER  //
+
+    -  python manage.py createsuperuser
+            
+          username = ....
+          passowrd = ....
+
+
+  // DATABASE SETTINGS  //
+
+  
+	*** MY SQL ***
+
+
+    - pip install mysqlclient
+
+     DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': '[DATABASE NAME]',
+        'USER': 'root',
+        'PASSWORD': 'Osiz@123',
+        'HOST': '127.0.0.1',   
+        'PORT': '3306',
+    }
+}
+
+      *** POSTGRE SQL ***
+
+     - pip install psycopy2-binary
+
+     - import psycopg2
+	     DATABASES = {
+	     'default': {
+		'ENGINE': 'django.db.backends.postgresql_psycopg2',
+		 'NAME': 'usksjdbhgdkfr',
+		 'USER': 'idurghsryw',
+		 'PASSWORD': 'jkhsiehdjrg',
+		 'HOST': 'localhost',
+		 'PORT': '',
+	     }
+	 }
+
+
+     *** SQLITE  ***
+
+     DATABASES = {
+     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+
+
+  // OTHER  SYSTEM IP CONNECTION  //
+
+    
+    - Settings.py -->  ALLOWED HOSTS add ['*']
+
+
+    *** OTHER ***
+  
+     -  system IP:localhostport(8000)/url_name
+
+
+    *** MY SYSTEM ***
+  
+     -  python manage.py runserver 0:8000(LOCAL HOST PORT)
+  
+ 
+
+
+  // GIT COMMAND  //
+
+    
+      - git init
+      -	git add .
+      - git remote add origin https://git@bitbucket.org:coingeo/coingeo.git
+      -	git remote set-url origin git@bitbucket.org:coingeo/coingeo.git
+      -	git pull origin master
+      
+      For push the front end code...
+
+           - git add .
+
+           - git commit -m "code moved"
+
+           - git pull origin master
+
+           - git push origin master
+
+  // CREATE MODELS // 
+  
+      - Go to models.py file 
+     
+		class Modelname(models.Model):
+     
+                     field_attribute_name= IntegerField(max_length=100)
+			
+		     ....
+                     ....
+
+      -  And register admin site 
+
+         Go to admin.py file
+
+                from .models import MODELNAME
+                admin.site.register(MODELNAME)            
+
+
+
+
+
+
+
